@@ -1,0 +1,25 @@
+[project]
+name = "produtos-identificador"
+version = "0.1.0"
+description = "Dashboard para coletar produtos do Mercado Livre, agrupar anuncios e calcular margem com equivalentes cadastrados manualmente."
+requires-python = ">=3.11"
+dependencies = []
+
+[project.optional-dependencies]
+browser = ["playwright>=1.45.0"]
+ui = ["streamlit>=1.41.0", "pandas>=2.2.0"]
+all = ["playwright>=1.45.0", "streamlit>=1.41.0", "pandas>=2.2.0"]
+
+[project.scripts]
+produtos-identificador = "produtos_identificador.cli:main"
+
+[build-system]
+requires = ["setuptools>=68"]
+build-backend = "setuptools.build_meta"
+
+[tool.setuptools.packages.find]
+where = ["src"]
+
+[tool.pytest.ini_options]
+pythonpath = ["src"]
+testpaths = ["tests"]
